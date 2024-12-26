@@ -71,8 +71,10 @@ def run_bot(data_account, recover=1):
         username =  kw.replace(" ", "-")
         fix_username = username+'_'+random_string(5)
 
-        judul =f'{kw} Onlyfans Leaked Update.! - ({random_string(5)})' 
+        judul =f'{kw} Onlyfans Leaked Update.!' 
 
+        kalimat = kw
+        kata_pertama = kalimat.split()[0]
 
 
         driver = web_driver()
@@ -193,6 +195,8 @@ def run_bot(data_account, recover=1):
         actions.move_to_element(textarea).click().send_keys(konten).perform()
 
         time.sleep(5)
+        lp =f'https://clipsfans.site/{kata_pertama}'
+        driver.find_element(By.CSS_SELECTOR,'input.w-full[placeholder="https://website.com"]').send_keys(lp)
    
         button ='button[type="submit"]'
         driver.execute_script(f"document.querySelector('{button}').click()")
