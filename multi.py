@@ -171,18 +171,19 @@ def run_bot(data_account, recover=1):
 
        
         driver.get(f"https://www.spatial.io/@{fix_username}")
-        time.sleep(30)
+        time.sleep(1)
 
         driver.find_element(By.XPATH, '//*[@id="__next"]/div[1]/div/div[1]/div[2]/div[1]/button').click()
         time.sleep(2)
 
 
-        driver.find_element(By.CSS_SELECTOR, 'input[placeholder="Name"]').clear()
-        time.sleep(1)
+        input_element2 = driver.find_element(By.CSS_SELECTOR, 'input[placeholder="Name"]')
 
-
-        driver.find_element(By.CSS_SELECTOR, 'input[placeholder="Name"]').send_keys(judul)
+        # Pilih semua teks dan hapus
+        input_element2.send_keys(Keys.CONTROL + 'a')  # Pilih semua teks (untuk Windows/Linux)
         time.sleep(2)
+        input_element2.send_keys(Keys.BACKSPACE)  # Hapus teks yang dipilih
+        
 
         konten = f'Click on the (Website) Icon 🌐 ➜➜➜  TOP RIGHT CORNER ... Get {kw} Leaked OF All Files Updated.'
 
